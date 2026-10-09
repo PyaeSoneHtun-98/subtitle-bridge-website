@@ -27,7 +27,7 @@ Also update the fallback URLs and version/size text in `dist/index.html` so down
 node scripts/check.mjs
 ```
 
-Commit and push the changes, then republish through Sites. A GitHub push alone does not automatically deploy this version. To host on another static host, serve `dist` as the public output directory; there is no build command or server-side dependency.
+Commit and push changes to `main`, then publish with `vercel deploy --prod`. Vercel serves `dist` directly, without installing dependencies or running a build. The release links are public configuration; no environment variables or secrets are required. Automatic GitHub deployments require a separately authorized repository connection.
 
 ## Content and privacy
 
@@ -42,4 +42,4 @@ Source on GitHub: https://github.com/PyaeSoneHtun-98/subtitle-bridge-website
 
 ## Hosting
 
-`.openai/hosting.json` identifies the Site and serves the tracked `dist` directory. Keep the Site ID when editing this site; never commit a hosting token. Sites keeps a separate hosting source mirror; GitHub is the owner’s repository for this website.
+Vercel is the primary host. `vercel.json` sets the public output directory to `dist`, with no install or build command. GitHub repository `PyaeSoneHtun-98/subtitle-bridge-website` contains the source on `main`. Vercel is linked to the local project; automatic GitHub deployment is not configured. `.vercel/` contains local project-link metadata and is ignored. Never commit hosting tokens. The existing `.openai/hosting.json` preserves the previous Sites deployment identity; it is excluded from Vercel uploads.
