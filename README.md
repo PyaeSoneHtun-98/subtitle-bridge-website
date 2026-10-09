@@ -42,4 +42,6 @@ Source on GitHub: https://github.com/PyaeSoneHtun-98/subtitle-bridge-website
 
 ## Hosting
 
+Live website: [subtitle-bridge-website.vercel.app](https://subtitle-bridge-website.vercel.app).
+
 Vercel is the primary host. `vercel.json` sets the public output directory to `dist`, with no install or build command. GitHub repository `PyaeSoneHtun-98/subtitle-bridge-website` contains the source on `main`. Vercel is linked to the local project; automatic GitHub deployment is not configured. `.vercel/` contains local project-link metadata and is ignored. Never commit hosting tokens. The existing `.openai/hosting.json` preserves the previous Sites deployment identity; it is excluded from Vercel uploads.
